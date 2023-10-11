@@ -84,6 +84,8 @@ def take_bet(chips):
 def hit(deck,hand):
     hand.add_card(deck.deal())
     hand.ace_adjust()
+    if hand == player_hand:
+        show_some(player_hand,dealer_hand)
     
 
 def hit_or_stand(deck,hand):
@@ -166,7 +168,6 @@ while True:
 
         hit_or_stand(new_deck,player_hand)
 
-        show_some(player_hand,dealer_hand)
  
         if player_hand.value > 21:
             player_busts(player_hand,dealer_hand,player_chips)
@@ -190,6 +191,7 @@ while True:
             push(player_hand,dealer_hand)
 
     print(f"Your chips now is {player_chips.totalchips}")
+    
     again = input("Would you like to play again? Please type y or n")
     if again[0].lower() == "y":
         playing = True
