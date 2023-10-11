@@ -140,8 +140,8 @@ def dealer_wins(player,dealer,chips):
 
 def push(player,dealer):
     print ("Its a tie!!")
-
-
+ 
+ 
 
 name = input("Please type your name: ")
 print(f"Welcome to BlackJack {name}! The rules of the game are simple! Dont let the total value of your hand exceed 21!\n\
